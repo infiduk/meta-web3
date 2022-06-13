@@ -8,7 +8,7 @@ class Governance {
     this.govAbi = await getABI(branch, "GovImp");
     this.govInstance = new web3.eth.Contract(this.govAbi.abi, GOV_ADDRESS);
 
-    // ! test
+    // using for implementation
     this.testGovAbi = await getABI(branch, "Gov");
     this.testGovInstance = new web3.eth.Contract(
       this.testGovAbi.abi,
@@ -124,6 +124,25 @@ class Governance {
   }
 
   /**
+   * ! nxtmeta
+   * @param {bytes32} envName
+   * @param {uint256} envType
+   * @param {bytes} envVal
+   * @param {bytes} memo
+   * @param {uint256} duration
+   */
+  addProposalToChangeEnv(envName, envType, envVal, memo, duration) {
+    if (!this.govInstance || !this.govInstance.methods.addProposalToChangeEnv)
+      return;
+    return {
+      to: this.addresses.GOV_ADDRESS,
+      data: this.govInstance.methods
+        .addProposalToChangeEnv(envName, envType, envVal, memo, duration)
+        .encodeABI(),
+    };
+  }
+
+  /**
    *
    * @param {address} [target, nMember]
    * @param {bytes} nName
@@ -176,24 +195,6 @@ class Governance {
       to: this.addresses.GOV_ADDRESS,
       data: this.govInstance.methods
         .addProposalToRemoveMember(member, lockAmount, memo)
-        .encodeABI(),
-    };
-  }
-
-  /**
-   *
-   * @param {bytes32} envName
-   * @param {uint256} envType
-   * @param {bytes} envVal
-   * @param {bytes} memo
-   */
-  addProposalToChangeEnv(envName, envType, envVal, memo) {
-    if (!this.govInstance || !this.govInstance.methods.addProposalToChangeEnv)
-      return;
-    return {
-      to: this.addresses.GOV_ADDRESS,
-      data: this.govInstance.methods
-        .addProposalToChangeEnv(envName, envType, envVal, memo)
         .encodeABI(),
     };
   }
