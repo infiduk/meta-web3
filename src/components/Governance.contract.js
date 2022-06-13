@@ -1,4 +1,3 @@
-import Web3 from "web3";
 import { getAddresses } from "../addresses";
 import { getABI } from "../helpers";
 
@@ -11,7 +10,7 @@ class Governance {
 
     // ! test
     this.testGovAbi = await getABI(branch, "Gov");
-    this.testGovInstance = new Web3.eth.Contract(this.testGovAbi, GOV_ADDRESS);
+    this.testGovInstance = new web3.eth.Contract(this.testGovAbi, GOV_ADDRESS);
   }
 
   async getBallotLength() {
