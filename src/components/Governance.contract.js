@@ -10,7 +10,10 @@ class Governance {
 
     // ! test
     this.testGovAbi = await getABI(branch, "Gov");
-    this.testGovInstance = new web3.eth.Contract(this.testGovAbi, GOV_ADDRESS);
+    this.testGovInstance = new web3.eth.Contract(
+      this.testGovAbi.abi,
+      GOV_ADDRESS
+    );
   }
 
   async getBallotLength() {
