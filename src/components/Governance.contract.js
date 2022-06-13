@@ -1,3 +1,4 @@
+import Web3 from "web3";
 import { getAddresses } from "../addresses";
 import { getABI } from "../helpers";
 
@@ -7,6 +8,10 @@ class Governance {
     const { GOV_ADDRESS } = this.addresses;
     this.govAbi = await getABI(branch, "GovImp");
     this.govInstance = new web3.eth.Contract(this.govAbi.abi, GOV_ADDRESS);
+
+    // ! test
+    this.testGovAbi = await getABI(branch, "Gov");
+    this.testGovInstance = new Web3.eth.Contract(this.testGovAbi, GOV_ADDRESS);
   }
 
   async getBallotLength() {
@@ -104,6 +109,16 @@ class Governance {
         .addProposalToChangeGov(newGovAddr, memo, duration)
         .encodeABI(),
     };
+  }
+
+  /**
+   * ! test
+   * ! nxtmeta
+   */
+  implementation() {
+    if (!this.testGovInstance || !this.testGovInstance.methods.implementation)
+      return;
+    return this.testGovInstance.methods.implementation().call();
   }
 
   /**
