@@ -55,8 +55,9 @@ class Governance {
 
   /**
    * ! nxtmeta
-   * @param {address} member
    * @param {address} staker
+   * @param {address} voter
+   * @param {address} reward
    * @param {bytes} name
    * @param {bytes} enode
    * @param {bytes} ip
@@ -66,8 +67,9 @@ class Governance {
    * @params {uint256} duration
    */
   addProposalToAddMember(
-    member,
     staker,
+    voter,
+    reward,
     name,
     enode,
     ip,
@@ -82,8 +84,9 @@ class Governance {
       to: this.addresses.GOV_ADDRESS,
       data: this.govInstance.methods
         .addProposalToAddMember([
-          member,
           staker,
+          voter,
+          reward,
           name,
           enode,
           ip,
