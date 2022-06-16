@@ -66,7 +66,7 @@ class Governance {
    * @param {bytes} memo
    * @params {uint256} duration
    */
-  addProposalToAddMember(
+  addProposalToAddMember({
     staker,
     voter,
     reward,
@@ -76,8 +76,8 @@ class Governance {
     port,
     lockAmount,
     memo,
-    duration
-  ) {
+    duration,
+  }) {
     if (!this.govInstance || !this.govInstance.methods.addProposalToAddMember)
       return;
     return {
@@ -105,7 +105,7 @@ class Governance {
    * @param {bytes} memo
    * @params {uint256} duration
    */
-  addProposalToChangeGov(newGovAddr, memo, duration) {
+  addProposalToChangeGov({ newGovAddr, memo, duration }) {
     if (!this.govInstance || !this.govInstance.methods.addProposalToChangeGov)
       return;
     return {
