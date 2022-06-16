@@ -134,7 +134,7 @@ class Governance {
    * @param {bytes} memo
    * @param {uint256} duration
    */
-  addProposalToChangeEnv(envName, envType, envVal, memo, duration) {
+  addProposalToChangeEnv({ envName, envType, envVal, memo, duration }) {
     if (!this.govInstance || !this.govInstance.methods.addProposalToChangeEnv)
       return;
     return {
