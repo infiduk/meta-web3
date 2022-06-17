@@ -60,6 +60,18 @@ class BallotStorage {
     return this.ballotStorageInstance.methods.getBallotVariable(id).call();
   }
 
+  /**
+   * ! nxtmeta
+   */
+  async getBallotDurationMinMax() {
+    if (
+      !this.ballotStorageInstance ||
+      !this.ballotStorageInstance.methods.getBallotDurationMinMax
+    )
+      return;
+    return this.ballotStorageInstance.methods.getBallotDurationMinMax().call();
+  }
+
   async getMinVotingDuration() {
     if (
       !this.ballotStorageInstance ||
