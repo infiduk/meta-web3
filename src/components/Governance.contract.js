@@ -64,7 +64,7 @@ class Governance {
    * @param {uint256} port
    * @param {uint256} lockAmount
    * @param {bytes} memo
-   * @params {uint256} duration
+   * @param {uint256} duration
    */
   addProposalToAddMember({
     staker,
@@ -101,9 +101,63 @@ class Governance {
 
   /**
    * ! nxtmeta
+   * @param {address} staker
+   * @param {address} voter
+   * @param {address} reward
+   * @param {bytes} name
+   * @param {bytes} enode
+   * @param {bytes} ip
+   * @param {uint256} port
+   * @param {uint256} lockAmount
+   * @param {bytes} memo
+   * @param {uint256} duration
+   * @param {address} oldStaker
+   */
+  addProposalToChangeMember({
+    staker,
+    voter,
+    reward,
+    name,
+    enode,
+    ip,
+    port,
+    lockAmount,
+    memo,
+    duration,
+    oldStaker,
+  }) {
+    if (
+      !this.govInstance ||
+      !this.govInstance.methods.addProposalToChangeMember
+    )
+      return;
+    return {
+      to: this.addresses.GOV_ADDRESS,
+      data: this.govInstance.methods
+        .addProposalToChangeMember(
+          [
+            staker,
+            voter,
+            reward,
+            name,
+            enode,
+            ip,
+            port,
+            lockAmount,
+            memo,
+            duration,
+          ],
+          oldStaker
+        )
+        .encodeABI(),
+    };
+  }
+
+  /**
+   * ! nxtmeta
    * @param {address} newGovAddr
    * @param {bytes} memo
-   * @params {uint256} duration
+   * @param {uint256} duration
    */
   addProposalToChangeGov({ newGovAddr, memo, duration }) {
     if (!this.govInstance || !this.govInstance.methods.addProposalToChangeGov)
@@ -141,43 +195,6 @@ class Governance {
       to: this.addresses.GOV_ADDRESS,
       data: this.govInstance.methods
         .addProposalToChangeEnv(envName, envType, envVal, memo, duration)
-        .encodeABI(),
-    };
-  }
-
-  /**
-   *
-   * @param {address} [target, nMember]
-   * @param {bytes} nName
-   * @param {bytes} nEnode
-   * @param {bytes} nIp
-   * @param {uint} [nPort, ockAmount]
-   * @param {bytes} memo
-   */
-  addProposalToChangeMember(
-    [target, nMember],
-    nName,
-    nEnode,
-    nIp,
-    [nPort, lockAmount],
-    memo
-  ) {
-    if (
-      !this.govInstance ||
-      !this.govInstance.methods.addProposalToChangeMember
-    )
-      return;
-    return {
-      to: this.addresses.GOV_ADDRESS,
-      data: this.govInstance.methods
-        .addProposalToChangeMember(
-          [target, nMember],
-          nName,
-          nEnode,
-          nIp,
-          [nPort, lockAmount],
-          memo
-        )
         .encodeABI(),
     };
   }
