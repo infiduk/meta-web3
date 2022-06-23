@@ -171,7 +171,6 @@ class Governance {
   }
 
   /**
-   * ! test
    * ! nxtmeta
    */
   implementation() {
@@ -200,12 +199,13 @@ class Governance {
   }
 
   /**
-   *
-   * @param {address} member
+   * ! nxtmeta
+   * @param {address} staker
    * @param {uint256} lockAmount
    * @param {bytes} memo
+   * @param {uint256} duration
    */
-  addProposalToRemoveMember(member, lockAmount, memo) {
+  addProposalToRemoveMember({ staker, lockAmount, memo, duration }) {
     if (
       !this.govInstance ||
       !this.govInstance.methods.addProposalToRemoveMember
@@ -214,7 +214,7 @@ class Governance {
     return {
       to: this.addresses.GOV_ADDRESS,
       data: this.govInstance.methods
-        .addProposalToRemoveMember(member, lockAmount, memo)
+        .addProposalToRemoveMember(staker, lockAmount, memo, duration)
         .encodeABI(),
     };
   }
