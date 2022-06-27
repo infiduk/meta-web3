@@ -218,6 +218,41 @@ class Governance {
         .encodeABI(),
     };
   }
+
+  /**
+   * ! nxtmeta
+   */
+  getMemberLength() {
+    if (!this.testGovInstance || !this.testGovInstance.methods.getMemberLength)
+      return;
+    return this.testGovInstance.methods.getMemberLength().call();
+  }
+
+  /**
+   * ! nxtmeta
+   */
+  getMember(idx) {
+    if (!this.testGovInstance || !this.testGovInstance.methods.getMember)
+      return;
+    return this.testGovInstance.methods.getMember(idx).call();
+  }
+
+  /**
+   * ! nxtmeta
+   */
+  getReward(idx) {
+    if (!this.testGovInstance || !this.testGovInstance.methods.getReward)
+      return;
+    return this.testGovInstance.methods.getReward(idx).call();
+  }
+
+  /**
+   * ! nxtmeta
+   */
+  getNode(idx) {
+    if (!this.testGovInstance || !this.testGovInstance.methods.getNode) return;
+    return this.testGovInstance.methods.getNode(idx).call();
+  }
 }
 
 export { Governance };
