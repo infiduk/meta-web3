@@ -30,7 +30,7 @@ const constants = {
       TESTNET: false,
       EXPLORER: "https:/microscope.wemix.com",
     },
-    12: {
+    1112: {
       NAME: "TESTNET",
       RPC: "https://api.test.wemix.com",
       BRANCH: "testnet",
