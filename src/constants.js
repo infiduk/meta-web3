@@ -19,7 +19,7 @@ const constants = {
 
   branch: {
     MAINNET: "mainnet",
-    TESTNET: "testnet",
+    TESTNET: "metadium/testnet",
   },
 
   NETWORK: {
@@ -33,7 +33,7 @@ const constants = {
     12: {
       NAME: "TESTNET",
       RPC: "https://api.metadium.com/dev",
-      BRANCH: "testnet",
+      BRANCH: "metadium/testnet",
       TESTNET: true,
       EXPLORER: "https://testnetexplorer.metadium.com",
     },
