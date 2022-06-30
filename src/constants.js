@@ -1,6 +1,6 @@
 const constants = {
-  organization: "wemixarchive",
-  repoName: "wemix-web3-abis",
+  organization: "infiduk",
+  repoName: "meta-web3-abis",
   addressesSourceFile: "contracts.json",
   ABIsSources: {
     Registry: "Registry.json",
