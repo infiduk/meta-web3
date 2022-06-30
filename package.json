@@ -1,10 +1,10 @@
 {
-  "name": "meta-web3",
-  "version": "0.3.4",
+  "name": "wemix-web3",
+  "version": "0.4.0",
   "description": "Web3 wrapper for ERC721, 725, 735 and governance",
-  "author": "hexoul",
+  "author": "wemixarchive",
   "license": "MIT",
-  "repository": "hexoul/meta-web3",
+  "repository": "wemixarchive/wemix-web3",
   "keywords": [
     "Ethereum",
     "DApp",

@@ -1,6 +1,6 @@
 const constants = {
-  organization: "infiduk",
-  repoName: "meta-web3-abis",
+  organization: "wemixarchive",
+  repoName: "wemix-web3-abis",
   addressesSourceFile: "contracts.json",
   ABIsSources: {
     Registry: "Registry.json",
@@ -25,17 +25,17 @@ const constants = {
   NETWORK: {
     11: {
       NAME: "MAINNET",
-      RPC: "https://api.metadium.com/prod",
+      RPC: "https://api.wemix.com",
       BRANCH: "mainnet",
       TESTNET: false,
-      EXPLORER: "https://explorer.metadium.com",
+      EXPLORER: "https:/microscope.wemix.com",
     },
     12: {
       NAME: "TESTNET",
-      RPC: "https://api.metadium.com/dev",
+      RPC: "https://api.test.wemix.com",
       BRANCH: "testnet",
       TESTNET: true,
-      EXPLORER: "https://testnetexplorer.metadium.com",
+      EXPLORER: "https:/microscope.test.wemix.com",
     },
   },
 };

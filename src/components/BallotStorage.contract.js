@@ -22,7 +22,7 @@ class BallotStorage {
   }
 
   /**
-   * ! nxtmeta
+   * ! added wemix
    * @param {uint256} _id
    */
   async getBallotMember(id) {
@@ -35,7 +35,7 @@ class BallotStorage {
   }
 
   /**
-   * ! nxtmeta
+   * ! added wemix
    * @param {uint256} _id
    */
   async getBallotAddress(id) {
@@ -48,7 +48,7 @@ class BallotStorage {
   }
 
   /**
-   * ! nxtmeta
+   * ! added wemix
    * @param {uint256} _id
    */
   async getBallotVariable(id) {

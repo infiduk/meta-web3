@@ -1,11 +1,12 @@
 # Example
 
-> meta-web3 example
+> wemix-web3 example
 
 ## Web3
 
 Before compiling, `src/web3-config.json` should be provided following spec described below.
 Here is example:
+
 ```
 {
   "netid": "ropsten",

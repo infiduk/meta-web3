@@ -1,7 +1,7 @@
-# meta-web3
+# wemix-web3
 
-[![License](http://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/hexoul/meta-web3/master/LICENSE)
-[![NPM](https://img.shields.io/npm/v/meta-web3.svg)](https://www.npmjs.com/package/meta-web3)
+[![License](http://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/hexoul/wemix-web3/master/LICENSE)
+[![NPM](https://img.shields.io/npm/v/wemix-web3.svg)](https://www.npmjs.com/package/wemix-web3)
 [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 
 > Web3 wrapper for ERC721, 725, 735 and governance
@@ -9,7 +9,7 @@
 ## Install
 
 ```bash
-npm i meta-web3
+npm i wemix-web3
 ```
 
 ## Components
@@ -28,17 +28,22 @@ npm i meta-web3
 ## Usage
 
 ```jsx
-import React, { Component } from 'react'
+import React, { Component } from "react";
 
 // Web3
-import Web3 from 'web3';
-import web3config from './web3-config.json'
+import Web3 from "web3";
+import web3config from "./web3-config.json";
 
 // Contracts
-import { constants, contracts, getContractsAddresses, initContracts, TopicRegistry } from 'meta-web3'
+import {
+  constants,
+  contracts,
+  getContractsAddresses,
+  initContracts,
+  TopicRegistry,
+} from "wemix-web3";
 
 class Example extends Component {
-
   state = {
     initDone: false,
   };
@@ -52,24 +57,28 @@ class Example extends Component {
     }).then(async () => {
       // All contracts are initialized
       this.result = {
-        getLengthOfAchievements: await contracts.achievementManager.getLengthOfAchievements(),
-        getAttestationAgencyNum: await contracts.aaRegistry.getAttestationAgencyNum(),
+        getLengthOfAchievements:
+          await contracts.achievementManager.getLengthOfAchievements(),
+        getAttestationAgencyNum:
+          await contracts.aaRegistry.getAttestationAgencyNum(),
         getTotal: await contracts.topicRegistry.getTotal(),
       };
-      this.setState({ initDone: true })
+      this.setState({ initDone: true });
     });
   }
 
   async initDirectly() {
     // If you want to initialize each contract directly
     getContractsAddresses().then(async () => {
-      let topicRegistry = new TopicRegistry()
-      topicRegistry.init({
-        web3: new Web3(new Web3.providers.HttpProvider(web3config.url)),
-      }).then(async () => {
-        let total = await topicRegistry.getTotal()
-        console.log('total', total)
-      });
+      let topicRegistry = new TopicRegistry();
+      topicRegistry
+        .init({
+          web3: new Web3(new Web3.providers.HttpProvider(web3config.url)),
+        })
+        .then(async () => {
+          let total = await topicRegistry.getTotal();
+          console.log("total", total);
+        });
     });
   }
 
@@ -77,14 +86,15 @@ class Example extends Component {
     this.init();
   }
 
-  render () {
+  render() {
     return (
       <div>
         {this.state.initDone &&
-          Object.keys(this.result).map(k => <p key={k}>{k + ': ' + this.result[k]}</p>)
-        }
+          Object.keys(this.result).map((k) => (
+            <p key={k}>{k + ": " + this.result[k]}</p>
+          ))}
       </div>
-    )
+    );
   }
 }
 ```
@@ -92,7 +102,7 @@ class Example extends Component {
 ## Test
 
 ```
-cd meta-web3
+cd wemix-web3
 npm start
 [Ctrl+C]
 cd example
@@ -100,6 +110,7 @@ npm start
 ```
 
 ## Reference
+
 - [ERC721 spec.](https://github.com/ethereum/EIPs/blob/master/EIPS/eip-721.md)
 - [ERC725 spec.](https://github.com/ethereum/EIPs/blob/master/EIPS/eip-725.md)
 - [ERC735 spec.](https://github.com/ethereum/EIPs/issues/735)

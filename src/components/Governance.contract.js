@@ -54,7 +54,7 @@ class Governance {
   }
 
   /**
-   * ! nxtmeta
+   * ! added wemix
    * @param {address} staker
    * @param {address} voter
    * @param {address} reward
@@ -100,7 +100,7 @@ class Governance {
   }
 
   /**
-   * ! nxtmeta
+   * ! added wemix
    * @param {address} staker
    * @param {address} voter
    * @param {address} reward
@@ -154,7 +154,7 @@ class Governance {
   }
 
   /**
-   * ! nxtmeta
+   * ! added wemix
    * @param {address} newGovAddr
    * @param {bytes} memo
    * @param {uint256} duration
@@ -171,7 +171,7 @@ class Governance {
   }
 
   /**
-   * ! nxtmeta
+   * ! added wemix
    */
   implementation() {
     if (!this.testGovInstance || !this.testGovInstance.methods.implementation)
@@ -180,7 +180,7 @@ class Governance {
   }
 
   /**
-   * ! nxtmeta
+   * ! added wemix
    * @param {bytes32} envName
    * @param {uint256} envType
    * @param {bytes} envVal
@@ -199,7 +199,7 @@ class Governance {
   }
 
   /**
-   * ! nxtmeta
+   * ! added wemix
    * @param {address} staker
    * @param {uint256} lockAmount
    * @param {bytes} memo
@@ -220,7 +220,7 @@ class Governance {
   }
 
   /**
-   * ! nxtmeta
+   * ! added wemix
    */
   getMemberLength() {
     if (!this.testGovInstance || !this.testGovInstance.methods.getMemberLength)
@@ -229,7 +229,7 @@ class Governance {
   }
 
   /**
-   * ! nxtmeta
+   * ! added wemix
    */
   getMember(idx) {
     if (!this.testGovInstance || !this.testGovInstance.methods.getMember)
@@ -238,7 +238,7 @@ class Governance {
   }
 
   /**
-   * ! nxtmeta
+   * ! added wemix
    */
   getReward(idx) {
     if (!this.testGovInstance || !this.testGovInstance.methods.getReward)
@@ -247,7 +247,7 @@ class Governance {
   }
 
   /**
-   * ! nxtmeta
+   * ! added wemix
    */
   getNode(idx) {
     if (!this.testGovInstance || !this.testGovInstance.methods.getNode) return;
