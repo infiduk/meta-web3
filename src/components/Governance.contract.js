@@ -244,6 +244,7 @@ class Governance {
     if (!this.testGovInstance || !this.testGovInstance.methods.getVoter)
       return;
     return this.testGovInstance.methods.getVoter(idx).call();
+  }
 
   /**
    * ! added wemix
