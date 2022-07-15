@@ -236,6 +236,14 @@ class Governance {
       return;
     return this.testGovInstance.methods.getMember(idx).call();
   }
+  
+  /**
+   * ! added wemix
+   */
+  getVoter(idx) {
+    if (!this.testGovInstance || !this.testGovInstance.methods.getVoter)
+      return;
+    return this.testGovInstance.methods.getVoter(idx).call();
 
   /**
    * ! added wemix
