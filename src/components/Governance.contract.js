@@ -223,44 +223,44 @@ class Governance {
    * ! added wemix
    */
   getMemberLength() {
-    if (!this.testGovInstance || !this.testGovInstance.methods.getMemberLength)
+    if (!this.govInstance || !this.govInstance.methods.getMemberLength)
       return;
-    return this.testGovInstance.methods.getMemberLength().call();
+    return this.govInstance.methods.getMemberLength().call();
   }
 
   /**
    * ! added wemix
    */
   getMember(idx) {
-    if (!this.testGovInstance || !this.testGovInstance.methods.getMember)
+    if (!this.govInstance || !this.govInstance.methods.getMember)
       return;
-    return this.testGovInstance.methods.getMember(idx).call();
+    return this.govInstance.methods.getMember(idx).call();
   }
   
   /**
    * ! added wemix
    */
   getVoter(idx) {
-    if (!this.testGovInstance || !this.testGovInstance.methods.getVoter)
+    if (!this.govInstance || !this.govInstance.methods.getVoter)
       return;
-    return this.testGovInstance.methods.getVoter(idx).call();
+    return this.govInstance.methods.getVoter(idx).call();
   }
 
   /**
    * ! added wemix
    */
   getReward(idx) {
-    if (!this.testGovInstance || !this.testGovInstance.methods.getReward)
+    if (!this.govInstance || !this.govInstance.methods.getReward)
       return;
-    return this.testGovInstance.methods.getReward(idx).call();
+    return this.govInstance.methods.getReward(idx).call();
   }
 
   /**
    * ! added wemix
    */
   getNode(idx) {
-    if (!this.testGovInstance || !this.testGovInstance.methods.getNode) return;
-    return this.testGovInstance.methods.getNode(idx).call();
+    if (!this.govInstance || !this.govInstance.methods.getNode) return;
+    return this.govInstance.methods.getNode(idx).call();
   }
 }
 
