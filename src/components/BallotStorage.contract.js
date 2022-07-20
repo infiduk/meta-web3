@@ -59,6 +59,20 @@ class BallotStorage {
       return;
     return this.ballotStorageInstance.methods.getBallotVariable(id).call();
   }
+  
+  /**
+   * ! added wemix
+   * @param {uint256} id
+   * @param {address} voter
+   */
+  async hasAlreadyVoted(id, voter) {
+    if (
+      !this.ballotStorageInstance ||
+      !this.ballotStorageInstance.methods.hasAlreadyVoted
+    )
+      return;
+    return this.ballotStorageInstance.methods.hasAlreadyVoted(id, voter).call();
+  }
 
   async getMinVotingDuration() {
     if (
