@@ -30,6 +30,14 @@ class Governance {
     if (!this.govInstance || !this.govInstance.methods.voteLength) return;
     return this.govInstance.methods.voteLength().call();
   }
+  
+  /**
+   * ! added wemix
+   */
+  getBallotInVoting() {
+    if (!this.govInstance || !this.govInstance.methods.getBallotInVoting) return;
+    return this.govInstance.methods.getBallotInVoting().call();
+  }
 
   /**
    *
